@@ -227,15 +227,15 @@ body {
     right: 10px;
 }
 .right_bar .cart_btn .btn_bg {
-    width: 40px;
-    height: 40px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     background: #fff;
     position: relative;
     cursor: pointer;
 }
 .right_bar .cart_btn .btn_bg i {
-    font-size: 20px;
+    font-size: 1rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -279,7 +279,7 @@ body {
     cursor: pointer;
 }
 .right_bar .showing_page p {
-    font-size: 14px;
+    font-size: .7rem;
     color: #868686;
     text-align: center;
 }
