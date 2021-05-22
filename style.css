@@ -44,24 +44,31 @@ body {
         font-size: 14px;
     }
 }
+/* 타이틀 *//* Product List CSS */
 
+/* 타이틀 */
 .full_wrap .page_letter {
     text-align: center;
     font-size: 1.5rem;
-    padding: 2rem 0;
+    padding: 2rem 0 0 0;
     font-family: 'Montserrat-Bold';
 }
-.full_product {
+.full_wrap .page_sub {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.full_product_list {
     width: 100%;
     height: auto;
     display: grid;
     grid-template-columns: 2fr 8fr;
 }
+
+/* 왼쪽 filter 영역 */
 .left_bar {
-    /* width: 30%; */
-    /* width: 14.5rem;  */
     height: auto;
-    /* background-color: #ccc; */
     margin-top: 72px;
     float: left;
 }
@@ -75,11 +82,12 @@ body {
     font-family: 'Montserrat-Bold';
 }
 .left_bar .sort_title {
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
     color: #AE1824;
     font-family: 'Montserrat-Bold';
 }
 
+/* filter 제목 */
 .left_bar .headline {
     width: 100%;
     height: 30px;
@@ -100,12 +108,21 @@ body {
     cursor: pointer;
     line-height: 30px;
 }
+.full_product_list .headline.active {
+    background: #AE1824;
+    color: #fff;
+}
+.full_product_list .headline.active > p {
+    color: #fff;
+}
 
+/* 카테고리 */
 .left_bar .sort_cate h5 {
     font-size: .8rem;
     font-family: 'Montserrat-Bold';
     margin-left: 30px;
     margin-top: 30px;
+    text-align: left;
 }
 .left_bar .sort_cate ul {
     margin-top: 20px;
@@ -119,6 +136,7 @@ body {
     font-family: 'Montserrat-Bold';
 }
 
+/* 컬러 */
 .left_bar .sort_colors input {
     margin-left: 30px;
 }
@@ -130,6 +148,7 @@ body {
 }
 .left_bar .sort_colors label {
     font-size: .7rem;
+    margin-left: 10px;
 }
 .left_bar .panel {
     max-height: 0;
@@ -137,6 +156,7 @@ body {
     transition: max-height .5s ease-out;
 }
 
+/* 디자인 */
 .left_bar .sort_design input {
     margin-left: 30px;
 }
@@ -148,8 +168,10 @@ body {
 }
 .left_bar .sort_design label {
     font-size: .7rem;
+    margin-left: 10px;
 }
 
+/* 가격대 */
 .left_bar .range_bar {
     margin-top: 30px;
     position: relative;
@@ -163,12 +185,12 @@ body {
     transform: translate(-50%, -50%);
 }
 
-
+/* 왼쪽 filter 영역 미디어쿼리 */
 @media (min-width: 800px) and (max-width: 1200px) {
-    .left_bar .sort_title {
-        font-size: 0.9rem; 
-    }
 
+    .left_bar .sort_title {
+        font-size: 0.9rem;
+    }
     .left_bar .sort_cate ul {
         margin-top: 20px;
         margin-left: 50px;
@@ -177,33 +199,20 @@ body {
         font-size: .7rem;
         margin-top: 20px;
     }
-    
     .left_bar .range_bar .range {
         width: 12.5rem;
     }
-    /* .right_bar {
-        width: 53.5rem; 
-        margin-left: 2rem;
-    } */
-}
-@media (min-width: 340px) and (max-width: 799px) {
-    html {
-        font-size: 14px;
-    }
+
 }
 
-
-
+/* 오른쪽 list 영역 */
 .right_bar {
-    /* width: 70%;  */
     height: auto;
     margin-left: 3rem;
     margin-top: 72px;
 }
-.right_bar .right_row {
-    /* width: 100%; */
-    /* width: 52.5rem;  */
-    height: 326px;
+.full_product_list .right_bar .right_row {
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -241,7 +250,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 .right_bar .item_bottom {
     margin-top: 10px;
 }
@@ -258,6 +266,8 @@ body {
     font-family: 'Montserrat-Bold';
     margin-top: 20px;
 }
+
+/* 구분선 */
 .right_bar .divide {
     width: 100%;
     height: 1px;
@@ -265,6 +275,7 @@ body {
     margin-top: 72px;
 }
 
+/* 하단 페이지 */
 .right_bar .showing_page {
     width: 95%;
     margin: 0 auto;
@@ -282,4 +293,69 @@ body {
     font-size: .7rem;
     color: #868686;
     text-align: center;
+}
+
+
+/* 모바일버전 미디어쿼리 영역 반전 */
+@media (min-width: 340px) and (max-width: 799px) {
+
+    .full_product_list {
+        grid-template-columns: none;
+        grid-template-rows: 2fr 8fr;
+    }
+    .left_bar p.filter {
+        font-size: 1.3rem;
+    }
+    .left_bar .sort_title {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+    .left_bar .headline i {
+        margin-right: 10px;
+    }
+    .left_bar .sort_cate h5 {
+        font-size: .9rem;
+    }
+    .left_bar .sort_cate li {
+        font-size: .8rem;
+    }
+    .left_bar .sort_colors label {
+        font-size: .9rem;
+    }
+    .left_bar .sort_design label {
+        font-size: .9rem;
+    }
+
+    .right_bar {
+        margin-left: 0;
+        margin-top: 40px;
+    }
+    .right_bar .right_row {
+        height: auto;
+        padding-bottom: 30px;
+    }
+    .right_bar .divide {
+        margin-top: 40px;
+    }
+    .right_bar .showing_page p {
+        font-size: .9rem;
+    }
+
+    .full_product_list .right_row .item:nth-child(3), .item:nth-child(4) {
+        margin-top: 0;
+    }
+    .full_product_list .right_row .item {
+        width: 32%;
+        float: left;
+    }
+    .full_product_list .right_row  .item:last-child {
+        display: none;
+    }
+    .right_bar .item_bottom .name1 {
+        font-size: .9rem;
+    }
+    .right_bar .item_bottom .name2 {
+        font-size: .8rem;
+    }
+
 }
